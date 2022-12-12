@@ -17,8 +17,6 @@ export default async (req, res) => {
 		quantity: 1,
 	}));
 
-	console.log("transformedItems", transformedItems);
-
 	const session = await stripe.checkout.sessions.create({
 		payment_method_types: ["card"],
 		line_items: transformedItems,
