@@ -42,16 +42,7 @@ function Header() {
 
 				{/* Right */}
 				<div className='flex items-center mx-6 space-x-6 text-xs text-white whitespace-nowrap'>
-					<div
-						onClick={() => {
-							if (!session) {
-								signIn("google");
-							} else {
-								signOut();
-							}
-						}}
-						className='link'
-					>
+					<div onClick={!session ? signIn : signOut} className='link'>
 						<p className='hover:underline'>
 							{session ? `Hello, ${session.user.name}` : "Sign In"}
 						</p>
